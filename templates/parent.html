@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
+    {% block head %}
     <meta charset="UTF-8">
     <title>Wizytówka</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    {% endblock %}
 </head>
 <body>
     <h1 id="title1">Witaj na mojej stronie domowej</h1>
     <img src="https://res.cloudinary.com/dr89d8ldb/image/upload/c_fill,h_700,w_810/f_webp/q_auto:eco/v1/artists/john-mayer_w3mbab?_a=DATAg1AAZAA0" alt="Obrazek">
-    <h1 id="title2">O mnie</h1>
-    <p><strong>imię:</strong> Michał</p>
-    <p><strong>nazwisko:</strong> Mordarski</p>
+    <div id="content">{% block content %}{% endblock %}</div>
 </body>
 </html>
